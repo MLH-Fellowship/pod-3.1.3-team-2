@@ -1,8 +1,9 @@
 button {
   margin: 10px;
   padding: 5px;
-  border: none;
+  border: 1px solid palevioletred;
   border-radius: 2px;
+  background-color: white;
   
 }
 
