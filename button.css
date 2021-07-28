@@ -1,0 +1,11 @@
+button {
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  
+}
+
+button:active {
+  background-color: pink;
+}
