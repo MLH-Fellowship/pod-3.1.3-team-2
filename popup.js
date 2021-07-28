@@ -42,7 +42,8 @@ function restoreList() {
   });
 };
 
-document.addEventListener('load', function() {
+//
+document.addEventListener('DOMContentLoaded', function() {
   restoreList();
 });
 
@@ -76,7 +77,7 @@ del.addEventListener('click', function (){
 
 //for debugging, prints when changes in storage happen.
 //it seems like when we close tab local storage is gone.
-//i dont understand what's going on.
+//i dont understand what's going on. pls help
 chrome.storage.onChanged.addListener(function (changes, namespace) {
   console.log(changes, namespace);
 })
