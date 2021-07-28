@@ -6,18 +6,21 @@
   <body>
     <div class="container">
       <form>
-        <label class="labels">Note</label><br>
         <div class="textarea_style">
           <textarea class="textarea" id="textarea" name="textarea_description" rows="4" cols="37" maxlength="100" minlength="3" placeholder="Write your note here..."></textarea>
         </div>
       </form>
     </div>
-    <button id="save">save</button>
-    <button id="link">search</a></button>
+    <button id="add">add</button>
+    <button id="search">search</a></button>
+    <button id="save">save</a></button>
+    <button id="delete">delete</a></button>
     <script src="popup.js"></script>
 
-    <div id="list">
-      <b>Old notes:</b>
+    <div>
+      <b>Notes:</b>
+      <div id="list">
+      </div>
     </div>
   </body>
 </html>
