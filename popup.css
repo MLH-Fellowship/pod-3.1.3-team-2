@@ -98,3 +98,7 @@ li{
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+.tilebutton {
+  float: inline-end;
+}
