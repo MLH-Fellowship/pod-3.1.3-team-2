@@ -5,9 +5,9 @@ var save = document.getElementById("download");
 var clear = document.getElementById('clear');
 var textarea = document.getElementById('textarea');
 var index = 0;
-var buttons = `<button class="tooltip tilebutton" onclick='searchTile(this)'><img src="https://img.icons8.com/material-outlined/15/000000/search--v2.png"/></a>
+var buttons = `<button class="tooltip tilebutton searchTile"><img src="https://img.icons8.com/material-outlined/15/000000/search--v2.png"/></a>
 <span class="tooltiptext">search</span></button>
-<button class="tooltip tilebutton" onclick='deleteTile(this)'><img src="https://img.icons8.com/material-rounded/15/000000/delete.png"/></a>
+<button class="tooltip tilebutton deleteTile"><img src="https://img.icons8.com/material-rounded/15/000000/delete.png"/></a>
 <span class="tooltiptext">delete</span></button>`;
 
 
@@ -23,7 +23,7 @@ if (note){
 }
 
 //add written note to list
-add.addEventListener('click', function (event) { 
+add.addEventListener('click', function(event) { 
   addItemToList();
 });
 
@@ -43,6 +43,13 @@ clear.addEventListener('click', function(){
   clearList();
 });
 
+document.getElementsByClassName("searchTile").addEventListener('click', function(event){
+  searchTile(event);
+});
+
+document.getElementsByClassName("deleteTile").addEventListener('click', function(event){
+deleteTile(event);
+});
 
 //functions below
 function addItemToList() {
