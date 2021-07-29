@@ -27,8 +27,10 @@ function addItemToList() {
   var list = document.getElementById('list');
   var d = new Date();
   var date = "<div id='date'>"+ d.getHours() + ':' + d.getMinutes() + ' '+ d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() +"</div>";
+  var listItem = "<li>" + item + date + "</li>";
+
   if(item != "")
-    list.innerHTML += "<li>" + item + date + "</li>";
+    list.innerHTML = listItem + list.innerHTML;
   document.getElementById("textarea").value = "";
   localStorage.setItem('listItems', list.innerHTML);
   
