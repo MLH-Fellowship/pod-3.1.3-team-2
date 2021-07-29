@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="popup.css">
+   
   </head>
   <body>
     <div class="container">
-      <form>
-        <label class="labels">Note</label><br>
+      <form id="form">
         <div class="textarea_style">
           <textarea class="textarea" id="textarea" name="textarea_description" rows="4" cols="37" maxlength="100" minlength="3" placeholder="Write your note here..."></textarea>
         </div>
-      </form>
-    </div>
-    <button id="save">save</button>
-    <button id="link">search</a></button>
-    <script src="popup.js"></script>
 
-    <div id="list">
-      <b>Old notes:</b>
+      </form>
+     
     </div>
+    <button class="tooltip" id="add"><img src="https://img.icons8.com/material-outlined/15/000000/plus--v1.png"/>
+      <span class="tooltiptext">add note</span>
+    </button>
+   
+    <button class="tooltip" id="search"><img src="https://img.icons8.com/material-outlined/15/000000/search--v1.png"/></a>
+      <span class="tooltiptext">search web</span>
+    </button>
+   
+
+    <div>
+      <!-- <b>Saves:</b> -->
+      
+      <div id="list"> </div>
+      
+    </div>
+
+    <button class="tooltip" id="download"><img src="https://img.icons8.com/material-rounded/15/000000/download--v1.png"/></a>
+      <span class="tooltiptext">download all</span>
+    </button>
+    <button class="tooltip" id="clear"><img src="https://img.icons8.com/material-rounded/15/000000/delete-forever.png"/></a>
+      <span class="tooltiptext">delete all</span>
+    </button>
+    <script src="popup.js"></script>
   </body>
 </html>
