@@ -43,10 +43,13 @@ clear.addEventListener('click', function(){
   clearList();
 });
 
+
+//tile buttons search text
 document.getElementsByClassName("searchTile").addEventListener('click', function(event){
   searchTile(event);
 });
 
+//tile buttons delete
 document.getElementsByClassName("deleteTile").addEventListener('click', function(event){
 deleteTile(event);
 });
@@ -97,7 +100,7 @@ function clearList() {
   list.innerHTML = "";
 }
 
-//limited to tiles function (they are being called on the html onclick attribute)
+
 function searchTile(event){
   search(event.parentNode.innerText);
 }
