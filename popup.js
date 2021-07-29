@@ -1,19 +1,37 @@
+//loading buttons
 var search = document.getElementById('search');
 var add = document.getElementById("add");
 var save = document.getElementById("save");
 var del = document.getElementById('delete');
+var textarea = document.getElementById('textarea');
 
+//restoring localStorage
+var saved = localStorage.getItem('listItems');
+var note = localStorage.getItem('note');
+if (saved) {
+	list.innerHTML = saved;
+}
+if (note){
+  textarea.innerHTML = note;
+}
 
+//add written note to list
 add.addEventListener('click', function (event) { 
   addItemToList();
 });
 
+//search what is written on the web
 search.addEventListener('click', function() {
     var input = document.getElementById("textarea").value;
     var query = 'https://www.google.com/search?q=' + encodeURIComponent(input);
-    if (input!="")
+    if (input!=""){
+      localStorage.setItem('note', input);
       window.open(query);
+    }
+
 });
+
+//donwload list as an html file
 download.addEventListener('click', function(){
   downloadToFile()
 });
@@ -34,11 +52,6 @@ function addItemToList() {
   document.getElementById("textarea").value = "";
   localStorage.setItem('listItems', list.innerHTML);
 
-}
-
-var saved = localStorage.getItem('listItems');
-if (saved) {
-	list.innerHTML = saved;
 }
 
 function downloadToFile() {

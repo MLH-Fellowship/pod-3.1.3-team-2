@@ -1,3 +1,23 @@
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #33333348 #f2f2f2;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #FFC7C7;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #e2e2ba;
+  border-radius: 12px;
+  border-color: #E6B566;
+
+}
 
 .textarea {
   border: 0px solid white;
