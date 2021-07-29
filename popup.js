@@ -33,7 +33,7 @@ function addItemToList() {
     list.innerHTML = listItem + list.innerHTML;
   document.getElementById("textarea").value = "";
   localStorage.setItem('listItems', list.innerHTML);
-  
+
 }
 
 var saved = localStorage.getItem('listItems');
@@ -42,7 +42,8 @@ if (saved) {
 }
 
 function downloadToFile() {
-  const textToBLOB = new Blob([saved], { type: 'text/plain' });
+  var list = document.getElementById('list');
+  const textToBLOB = new Blob([list.innerHTML], { type: 'text/plain' });
   const fileName = 'List.html';	   // The file to save the data.
 
   let newLink = document.createElement("a");
