@@ -28,30 +28,32 @@ search.addEventListener('click', function() {
       localStorage.setItem('note', input);
       window.open(query);
     }
-
 });
 
 //donwload list as an html file
 download.addEventListener('click', function(){
-  downloadToFile()
+  downloadToFile();
 });
 
+//clear list
 clear.addEventListener('click', function(){
   clearList();
 });
 
+
+//functions below
 function addItemToList() {
   var item = document.getElementById("textarea").value;
   var list = document.getElementById('list');
   var d = new Date();
   var date = "<div id='date'>"+ d.getHours() + ':' + d.getMinutes() + ' '+ d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() +"</div>";
+  // var buttons = <div>
   var listItem = "<li>" + item + date + "</li>";
 
   if(item != "")
     list.innerHTML = listItem + list.innerHTML;
   document.getElementById("textarea").value = "";
   localStorage.setItem('listItems', list.innerHTML);
-
 }
 
 function downloadToFile() {
@@ -69,7 +71,6 @@ function downloadToFile() {
     newLink.style.display = "none";
     document.body.appendChild(newLink);
   }
-
 newLink.click();
 }
 
