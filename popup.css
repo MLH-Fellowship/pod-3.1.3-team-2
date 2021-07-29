@@ -9,27 +9,28 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: #FFC7C7;
+  background: #2978b5;
+  width: 8px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #e2e2ba;
-  border-radius: 12px;
-  border-color: #E6B566;
+  background-color: #8AB6D6;
+  border-radius: 8px;
+  border-color: #2978B5;
 
 }
 
 .textarea {
-  border: 0px solid white;
-  background-color: #f5eeee;
+  border: 2px solid #8AB6D6;
+  background-color: #f1ecec;
   resize: none;
   padding: 15px;
-  outline-color: #cab49a;
+  outline-color: #8AB6D6;
   margin: 10px;
   border-radius: 10px;
 }
 button {
-  margin: 10px;
+  margin: 15px;
   padding: 5px;
   border: none;
   border-radius: 50%;
@@ -59,11 +60,12 @@ button:active{
   box-shadow: none;
 }
 button:active img {
-  transform: scale(0.9);
+  transform: scale(01);
   opacity: 50%;
 }
 
 li{
+  font-size: small;
   padding: 5px;
   list-style-type: none;
   margin: 7px 5px;
@@ -85,7 +87,7 @@ li{
 .tooltip .tooltiptext {
   visibility: hidden;
   width: max-content;
-  font-size: x-small;
+  font-size: small;
   font-weight: 500;
   padding: 7px;
   background-color: rgba(220, 212, 148, 0.219);
