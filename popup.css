@@ -9,7 +9,8 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: #2978B5;
+  background: #2978b5;
+  width: 8px;
 }
 
 *::-webkit-scrollbar-thumb {
