@@ -1,0 +1,80 @@
+
+.textarea {
+  border: 0px solid white;
+  background-color: #f5eeee;
+  resize: none;
+  padding: 15px;
+  outline-color: #cab49a;
+  margin: 10px;
+  border-radius: 10px;
+}
+button {
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+button img {
+  display: block;
+  top: 50%;
+  left: 50%;
+}
+
+#add {
+  background-color: #A7D0CD; 
+}
+#search {
+  background-color: #F5C0C0; 
+}
+#download {
+  background-color: #FFEEBB; 
+}
+#clear {
+  background-color: #C9E4C5; 
+}
+
+button:active{
+  box-shadow: none;
+}
+button:active img {
+  transform: scale(0.9);
+  opacity: 50%;
+}
+
+li{
+  padding: 5px;
+  list-style-type: none;
+  margin: 7px 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+#date {
+  font-size: x-small;
+  color: #838383;
+  padding: 2px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  font-size: x-small;
+  font-weight: 500;
+  padding: 7px;
+  background-color: rgba(220, 212, 148, 0.219);
+  color: #3d3535;
+  text-align: left;
+  position: absolute;
+  z-index: 1;
+  
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
