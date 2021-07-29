@@ -65,6 +65,7 @@ button:active img {
 }
 
 li{
+  font-size: small;
   padding: 5px;
   list-style-type: none;
   margin: 7px 5px;
