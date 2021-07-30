@@ -36,8 +36,7 @@ brew install gh
 ```
 
 ## Chrome UI
-<img src ="![extension730](https://user-images.githubusercontent.com/83324209/127685025-7f8761d6-9058-4a1c-aec9-763d81b7d371.png)
-" width= "300"/>
+<img src ="" width="300"/>
 
 
 ## Authors
