@@ -1,7 +1,7 @@
 # Team Two's Developer Tools Project
 
 ## Project Description
-This project concists of a useful chrome extension used to take and save notes, open new tabs to search, as well as saving highlighted text. 
+This project consists of a useful chrome extension used to take and save notes, open new tabs to search, as well as saving highlighted text. 
 
 ## Useful commands
 
