@@ -4,8 +4,10 @@
 This project consists of a useful chrome extension used to take and save notes, open new tabs to search, as well as saving highlighted text.
 [extension730](https://user-images.githubusercontent.com/83324209/127670825-78a9dec9-be7e-472c-9e3b-ce0ec06c1d06.png)
 
+## Techonologies used
+The chrome extension is built using javascript with HTML and CSS
 
-##Useful Commands
+## Useful Commands
 
 
 Switch branches:
@@ -24,3 +26,7 @@ Download it with Homebrew:
 ```
 brew install gh
 ```
+## Authors
+- Riddhi More
+- Lucas Vinzon
+- Katelyn Hurst
