@@ -2,14 +2,14 @@
 
 ## Project Description
 This project consists of a useful chrome extension used to take and save notes, open new tabs to search, as well as saving highlighted text.
-See photo at the bottom of readme to view what the working project appears in your chrome browser.
+See photo at the bottom of README to view how the working project appears in the chrome browser.
 
 ## Techonologies used
-The chrome extension is built using javascript with HTML and CSS.
+The chrome extension is built using JavaScript with HTML and CSS.
 
-## How to use extension
+## How to Test the Extension
 - Save the files to your local machine
-- To add extension in developer mode you first go to *chrome://extensions*
+- To add extension in developer mode you first go to *[chrome://extensions](chrome://extensions)*
 - Make sure to be in develper mode
 - Click *load unpacked* in the upper left corner
 - Select the folder that contains the *manifest.json* file
