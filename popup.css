@@ -100,3 +100,10 @@ li{
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+.tilebutton {
+  float: right;
+  margin-top: -50px;
+}
+.searchTile {
+  margin-right: 45px;
+}
