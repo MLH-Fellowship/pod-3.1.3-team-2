@@ -2,10 +2,13 @@
 
 ## Project Description
 This project consists of a useful chrome extension used to take and save notes, open new tabs to search, as well as saving highlighted text.
-[extension730](https://user-images.githubusercontent.com/83324209/127670825-78a9dec9-be7e-472c-9e3b-ce0ec06c1d06.png)
+See photo at the bottom of readme to view what the working project appears in your chrome browser.
 
 ## Techonologies used
-The chrome extension is built using javascript with HTML and CSS
+The chrome extension is built using javascript with HTML and CSS.
+
+## How to use extension
+
 
 ## Useful Commands
 
@@ -30,3 +33,6 @@ brew install gh
 - Riddhi More
 - Lucas Vinzon
 - Katelyn Hurst
+
+## Chrome UI
+![extension730](https://user-images.githubusercontent.com/83324209/127670825-78a9dec9-be7e-472c-9e3b-ce0ec06c1d06.png) 
