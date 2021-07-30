@@ -1,37 +1,38 @@
 //loading buttons
-var search = document.getElementById('search');
+var searchTextArea = document.getElementById('search');
 var add = document.getElementById("add");
-var save = document.getElementById("save");
-var del = document.getElementById('delete');
+var save = document.getElementById("download");
+var clear = document.getElementById('clear');
 var textarea = document.getElementById('textarea');
+var index = 0;
+var buttons = `<button class="tooltip tilebutton searchTile"><img src="https://img.icons8.com/material-outlined/15/000000/search--v2.png"/></a>
+<span class="tooltiptext">very soon!</span></button>
+<button class="tooltip tilebutton deleteTile"><img src="https://img.icons8.com/material-rounded/15/000000/delete.png"/></a>
+<span class="tooltiptext">soon!</span></button>`;
+
 
 //restoring localStorage
 var saved = localStorage.getItem('listItems');
 var note = localStorage.getItem('note');
+
 if (saved) {
 	list.innerHTML = saved;
 }
-if (note){
-  textarea.innerHTML = note;
-}
+
 
 //add written note to list
-add.addEventListener('click', function (event) { 
+add.addEventListener('click', function(event) { 
   addItemToList();
 });
 
 //search what is written on the web
-search.addEventListener('click', function() {
-    var input = document.getElementById("textarea").value;
-    var query = 'https://www.google.com/search?q=' + encodeURIComponent(input);
-    if (input!=""){
-      localStorage.setItem('note', input);
-      window.open(query);
-    }
+searchTextArea.addEventListener('click', function(event) {
+    search(document.getElementById("textarea").value);
 });
 
+
 //donwload list as an html file
-download.addEventListener('click', function(){
+save.addEventListener('click', function(){
   downloadToFile();
 });
 
@@ -41,6 +42,16 @@ clear.addEventListener('click', function(){
 });
 
 
+//tile buttons search text
+document.getElementsByClassName("searchTile").addEventListener('click', function(event){
+  searchTile(event);
+});
+
+//tile buttons delete
+document.getElementsByClassName("deleteTile").addEventListener('click', function(event){
+deleteTile(event);
+});
+
 //functions below
 function addItemToList() {
   var item = document.getElementById("textarea").value;
@@ -48,8 +59,8 @@ function addItemToList() {
   var d = new Date();
   var date = "<div id='date'>"+ d.getHours() + ':' + d.getMinutes() + ' '+ d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() +"</div>";
   // var buttons = <div>
-  var listItem = "<li>" + item + date + "</li>";
-
+  var listItem = "<li id='tile" + index + "'><p contentEditable='true'>" + item + "</p>" + date + buttons + "</li>";
+  index += 1;
   if(item != "")
     list.innerHTML = listItem + list.innerHTML;
   document.getElementById("textarea").value = "";
@@ -74,7 +85,27 @@ function downloadToFile() {
 newLink.click();
 }
 
+function search(input){
+  var query = 'https://www.google.com/search?q=' + encodeURIComponent(input);
+  if (input!=""){
+    localStorage.setItem('note', input);
+    window.open(query);
+  }
+}
+
 function clearList() {
   localStorage.clear();
   list.innerHTML = "";
+}
+
+
+function searchTile(event){
+  search(event.parentNode.innerText);
+}
+
+function deleteTile(event) {
+  localStorage.clear();
+  event.parentNode.outerHTML = "";
+  var list = document.getElementById('list');
+  localStorage.setItem('listItems', list.innerHTML);
 }
