@@ -102,8 +102,11 @@ li{
 }
 .tilebutton {
   float: right;
-  margin-top: -50px;
+  margin-top: -30px;
 }
 .searchTile {
-  margin-right: 45px;
+  margin-right: 2px;
+}
+.deleteTile {
+  margin-right: -2px;
 }
