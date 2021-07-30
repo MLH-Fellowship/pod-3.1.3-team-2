@@ -9,7 +9,7 @@ The chrome extension is built using JavaScript with HTML and CSS.
 
 ## How to Test the Extension
 - Save the files to your local machine
-- To add extension in developer mode you first go to [Link to Chrome](chrome://extensions/)
+- To add extension in developer mode you first go to [chrome://extensions](chrome://extensions/)
 - Make sure to be in develper mode
 - Click *load unpacked* in the upper left corner
 - Select the folder that contains the *manifest.json* file
