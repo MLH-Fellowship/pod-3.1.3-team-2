@@ -43,14 +43,14 @@ clear.addEventListener('click', function(){
 
 
 //tile buttons search text
-document.getElementsByClassName("searchTile").addEventListener('click', function(event){
-  searchTile(event);
-});
+// document.getElementsByClassName("searchTile").addEventListener('click', function(event){
+//   searchTile(event);
+// });
 
-//tile buttons delete
-document.getElementsByClassName("deleteTile").addEventListener('click', function(event){
-deleteTile(event);
-});
+// //tile buttons delete
+// document.getElementsByClassName("deleteTile").addEventListener('click', function(event){
+// deleteTile(event);
+// });
 
 //functions below
 function addItemToList() {
@@ -98,25 +98,14 @@ function clearList() {
   list.innerHTML = "";
 }
 
-//Tile function
-function searchTile(event){
-  search(event.parentNode.innerText);
-}
+//Tile function in progress
+// function searchTile(event){
+//   search(event.parentNode.innerText);
+// }
 
-function deleteTile(event) {
-  localStorage.clear();
-  event.parentNode.outerHTML = "";
-  var list = document.getElementById('list');
-  localStorage.setItem('listItems', list.innerHTML);
-}
-
-function getSelected() {
-  if(window.getSelection) { return window.getSelection(); }
-  else if(document.getSelection) { return document.getSelection(); }
-  else {
-    var selection = document.selection && document.selection.createRange();
-    if(selection.text) { return selection.text; }
-    return false;
-  }
-  return false;
-}
+// function deleteTile(event) {
+//   localStorage.clear();
+//   event.parentNode.outerHTML = "";
+//   var list = document.getElementById('list');
+//   localStorage.setItem('listItems', list.innerHTML);
+// }
