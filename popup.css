@@ -1,0 +1,112 @@
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #33333348 #f2f2f2;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #2978b5;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #8AB6D6;
+  border-radius: 8px;
+  border-color: #2978B5;
+
+}
+
+.textarea {
+  border: 2px solid #8AB6D6;
+  background-color: #f1ecec;
+  resize: none;
+  padding: 15px;
+  outline-color: #8AB6D6;
+  margin: 10px;
+  border-radius: 10px;
+}
+button {
+  margin: 15px;
+  padding: 5px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+button img {
+  display: block;
+  top: 50%;
+  left: 50%;
+}
+
+#add {
+  background-color: #A7D0CD; 
+}
+#search {
+  background-color: #F5C0C0; 
+}
+#download {
+  background-color: #FFEEBB; 
+}
+#clear {
+  background-color: #C9E4C5; 
+}
+
+button:active{
+  box-shadow: none;
+}
+button:active img {
+  transform: scale(01);
+  opacity: 50%;
+}
+
+li{
+  font-size: small;
+  padding: 5px;
+  list-style-type: none;
+  margin: 7px 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+#date {
+  font-size: x-small;
+  color: #838383;
+  padding: 2px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  font-size: small;
+  font-weight: 500;
+  padding: 7px;
+  background-color: rgba(220, 212, 148, 0.219);
+  color: #3d3535;
+  text-align: left;
+  position: absolute;
+  z-index: 1;
+  
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.tilebutton {
+  float: right;
+  margin-top: -30px;
+}
+.searchTile {
+  margin-right: 2px;
+}
+.deleteTile {
+  margin-right: -2px;
+}
