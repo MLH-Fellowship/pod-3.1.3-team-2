@@ -7,27 +7,8 @@ var textarea = document.getElementById('textarea');
 var index = 0;
 var searchimg = new Image();
 // searchimg.src = 'https://img.icons8.com/material-outlined/15/000000/search--v2.png';
-var deleteimg = new Image();
-deleteimg.src = 'https://img.icons8.com/material-rounded/15/000000/delete.png';
-var button1 = document.createElement('button');
-button1.setAttribute('class','tooltip tilebutton searchTile');
-// button1.setAttribute('src','https://img.icons8.com/material-outlined/15/000000/search--v2.png');
-// var spans = document.createElement('span');
-// spans.setAttribute('class', 'tooltiptext');
-// spans.appendChild(document.createTextNode('soon!'));
-// button1.appendChild(spans);
-
-var button2 = document.createElement('button');
-button2.setAttribute('class','tooltip tilebutton deleteTile');
-// button2.setAttribute('src','https://img.icons8.com/material-rounded/15/000000/delete.png');
-// button2.appendChild(spans);
-
-//restoring localStorage
-var saved = localStorage.getItem('listItems');
-
-if (saved) {
-	list = saved;
-}
+//var deleteimg = new Image();
+//deleteimg.src = 'https://img.icons8.com/material-rounded/15/000000/delete.png';
 
 //add written note to list
 add.addEventListener('click', function() { 
@@ -55,16 +36,17 @@ var list = document.getElementById('list');
 function addItemToList() {
 
   var button1 = document.createElement('button');
-  button1.setAttribute('class','tooltip tilebutton searchTile');
-  button1.setAttribute('img',searchimg);
+  button1.classList.add("tooltip", "tilebutton", "searchTile");
+  //button1.setAttribute('class','tooltip tilebutton searchTile');
+ // button1.setAttribute('img',searchimg);
   // var spans = document.createElement('span');
   // spans.setAttribute('class', 'tooltiptext');
   // spans.appendChild(document.createTextNode('soon!'));
   // button1.appendChild(spans);
 
-  var button2 = document.createElement('button');
-  button2.setAttribute('class','tooltip tilebutton deleteTile');
-  button2.setAttribute('img',deleteimg);
+  //var button2 = document.createElement('button');
+  // button2.setAttribute('class','tooltip tilebutton deleteTile');
+  // button2.setAttribute('img',deleteimg);
   // button2.appendChild(spans);
 
   var texts = document.createElement('p');
@@ -80,16 +62,23 @@ function addItemToList() {
   entry.appendChild(dates);
   // entry.appendChild(document.createTextNode(texts));
  
-  button1.setAttribute('onclick', 'searchTile("' +'item'+ index +'")');
-  button2.setAttribute('onclick', 'deleteTile("' +'item'+ index +'")');
+ // button1.setAttribute('onclick', 'searchTile("' +'item'+ index +'")');
+  // button2.setAttribute('onclick', 'deleteTile("' +'item'+ index +'")');
   entry.appendChild(button1);
-  entry.appendChild(button2);
+  // entry.appendChild(button2);
   
   if (item != "")
     list.appendChild(entry);
   document.getElementById("textarea").value = "";
   localStorage.setItem('listItems', list.innerHTML);
   index += 1;
+
+const buttons = document.querySelectorAll(".searchTile").forEach((button) => {
+  button.addEventListener("click", function (event) {
+    console.log(event.target);
+  });
+});
+
 }
 
 
