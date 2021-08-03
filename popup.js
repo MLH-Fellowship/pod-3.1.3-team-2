@@ -46,14 +46,27 @@ async function waitForTab(){
 }
 
 //function to inject
-function inject(event){
+function inject(){
 	// her might be the issue, function stops working here which means up to here we know that
 	// function is stored in the HTML file.
-	document.addEventListener('select', function(event){
+	document.addEventListener('onmouseup', function(event){
+    console.log(event)
 	let selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-  console.log(selection);
+  let selection2 = (getSelected());
   addItemToList(selection);
+	additemToList(selection2)
 });
+}
+
+function getSelected() {
+  if(window.getSelection) { return window.getSelection(); }
+  else if(document.getSelection) { return document.getSelection(); }
+  else {
+    var selection = document.selection && document.selection.createRange();
+    if(selection.text) { return selection.text; }
+    return false;
+  }
+  return false;
 }
 
 //donwload list as an html file
@@ -133,15 +146,4 @@ function deleteTile(event) {
   event.parentNode.outerHTML = "";
   var list = document.getElementById('list');
   localStorage.setItem('listItems', list.innerHTML);
-}
-
-function getSelected() {
-  if(window.getSelection) { return window.getSelection(); }
-  else if(document.getSelection) { return document.getSelection(); }
-  else {
-    var selection = document.selection && document.selection.createRange();
-    if(selection.text) { return selection.text; }
-    return false;
-  }
-  return false;
 }
