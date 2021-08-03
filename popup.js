@@ -39,7 +39,7 @@ function addItemToList(item) {
     button1.classList.add("tooltip", "tilebutton", "searchTile");
     var spans = document.createElement("span");
     spans.classList.add("tooltiptext");
-    spans.appendChild(document.createTextNode("soon!"));
+    spans.appendChild(document.createTextNode("Search Note"));
     button1.appendChild(spans);
 
     // Button 2
@@ -47,7 +47,7 @@ function addItemToList(item) {
     button2.classList.add("tooltip", "tilebutton", "deleteTile");
     var spans = document.createElement("span");
     spans.classList.add("tooltiptext");
-    spans.appendChild(document.createTextNode("soon!"));
+    spans.appendChild(document.createTextNode("Delete Note"));
     button2.appendChild(spans);
 
     var texts = document.createElement("p");
