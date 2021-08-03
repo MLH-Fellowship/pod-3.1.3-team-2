@@ -129,5 +129,4 @@ function search(input) {
 function clearList() {
     localStorage.clear();
     list.innerHTML = "";
-    remove = document.getElementsByClassName("deleteTile");
 }
