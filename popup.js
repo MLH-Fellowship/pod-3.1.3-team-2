@@ -5,9 +5,9 @@ var save = document.getElementById("download");
 var clear = document.getElementById('clear');
 var textarea = document.getElementById('textarea');
 var index = 0;
-var buttons = `<button class="tooltip tilebutton searchTile"><img src="https://img.icons8.com/material-outlined/15/000000/search--v2.png"/></a>
+var buttons = `<button class="tooltip tilebutton searchTile"><img src="images/search.png"/></a>
 <span class="tooltiptext">very soon!</span></button>
-<button class="tooltip tilebutton deleteTile"><img src="https://img.icons8.com/material-rounded/15/000000/delete.png"/></a>
+<button class="tooltip tilebutton deleteTile"><img src="images/delete.png"/></a>
 <span class="tooltiptext">soon!</span></button>`;
 
 
