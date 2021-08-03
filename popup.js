@@ -74,13 +74,13 @@ function addItemToList(item) {
 
     // Button 1
     var searchimg = document.createElement("img");
-    searchimg.src = "https://img.icons8.com/material-outlined/15/000000/search--v2.png";
+    searchimg.src = "/images/search.png";
     entry.appendChild(button1);
     button1.appendChild(searchimg);
 
     // Button 2
     var deleteimg = document.createElement("img");
-    deleteimg.src = "https://img.icons8.com/material-rounded/15/000000/delete-forever.png";
+    deleteimg.src = "/images/delete.png";
     entry.appendChild(button2);
     button2.appendChild(deleteimg);
 
