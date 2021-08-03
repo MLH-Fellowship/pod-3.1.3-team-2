@@ -16,14 +16,14 @@ The chrome extension is built using JavaScript with HTML and CSS.
 - Extension is installed!
 
 
-## features implemented
+## Features Implemented
 - **Add:** write note and add to list
 - **Web Search:** search the text directly from your text box
 - **Download list:** get you list into your local device
 - **Delete list:** delets all saved lists
 - **Edit list:** edit a saved list item just by clicking on it
 
-## Coming soon!
+## Coming Soon!
 - **Highlighter:** highlight text to directly add it to your list, no more typing!
 - **Individual features:** delete and search for individual search item
 - and so much more!
