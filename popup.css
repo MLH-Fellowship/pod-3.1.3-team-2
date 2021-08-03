@@ -59,6 +59,7 @@ button img {
 button:active{
   box-shadow: none;
 }
+
 button:active img {
   transform: scale(01);
   opacity: 50%;

@@ -6,12 +6,14 @@ var textarea = document.getElementById("textarea");
 var index = 0;
 var saved = localStorage.getItem('listItems');
 var list = document.getElementById('list');
+
 if (saved) {
 	list.innerHTML = saved;
+  assignButton();
 }
 //add written note to list
 add.addEventListener("click", function () {
-    addItemToList(document.getElementById("textarea").value);
+    addItemToList(document.getElementById('textarea').value);
 });
 
 //search what is written on the web
@@ -50,6 +52,7 @@ function addItemToList(item) {
 
     var texts = document.createElement("p");
     texts.contentEditable = true;
+    texts.classList.add("editable");
     texts.innerHTML = item;
     var entry = document.createElement("li");
     entry.appendChild(texts);
@@ -89,17 +92,28 @@ function addItemToList(item) {
     localStorage.setItem("listItems", list.innerHTML);
     index += 1;
 
-    document.querySelectorAll(".searchTile").forEach((button) => {
-        button.addEventListener("click", function (event) {
-            search(event.target.parentNode.parentNode.firstElementChild.innerHTML);
-        });
-    });
+    assignButton();
+       
+}
 
-    document.querySelectorAll(".deleteTile").forEach((button) => {
-        button.addEventListener("click", function (event) {
-            event.target.parentNode.parentNode.remove();
-        });
+function assignButton() {
+  document.querySelectorAll(".searchTile").forEach((button) => {
+    button.addEventListener("click", function (event) {
+        search(event.target.parentNode.parentNode.firstElementChild.innerHTML);
     });
+  });
+
+  document.querySelectorAll(".deleteTile").forEach((button) => {
+    button.addEventListener("click", function (event) {
+        event.target.parentNode.parentNode.remove();
+        localStorage.setItem("listItems", list.innerHTML);
+    });
+  });
+  document.querySelectorAll(".editable").forEach((text) => {
+    text.addEventListener("input", function () {
+      localStorage.setItem("listItems", list.innerHTML); 
+    });
+  });
 }
 
 function downloadToFile() {
