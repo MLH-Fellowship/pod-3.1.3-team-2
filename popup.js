@@ -11,7 +11,7 @@ if (saved) {
 }
 //add written note to list
 add.addEventListener("click", function () {
-    addItemToList();
+    addItemToList(document.getElementById("textarea").value);
 });
 
 //search what is written on the web
@@ -31,7 +31,7 @@ clear.addEventListener("click", function () {
 
 var list = document.getElementById("list");
 
-function addItemToList() {
+function addItemToList(item) {
     // Button 1
     var button1 = document.createElement("button");
     button1.classList.add("tooltip", "tilebutton", "searchTile");
@@ -50,7 +50,6 @@ function addItemToList() {
 
     var texts = document.createElement("p");
     texts.contentEditable = true;
-    var item = document.getElementById("textarea").value;
     texts.innerHTML = item;
     var entry = document.createElement("li");
     entry.appendChild(texts);
@@ -75,13 +74,13 @@ function addItemToList() {
 
     // Button 1
     var searchimg = document.createElement("img");
-    searchimg.src = "https://img.icons8.com/material-outlined/15/000000/search--v2.png";
+    searchimg.src = "/images/search.png";
     entry.appendChild(button1);
     button1.appendChild(searchimg);
 
     // Button 2
     var deleteimg = document.createElement("img");
-    deleteimg.src = "https://img.icons8.com/material-rounded/15/000000/delete-forever.png";
+    deleteimg.src = "/images/delete.png";
     entry.appendChild(button2);
     button2.appendChild(deleteimg);
 
@@ -130,5 +129,4 @@ function search(input) {
 function clearList() {
     localStorage.clear();
     list.innerHTML = "";
-    remove = document.getElementsByClassName("deleteTile");
 }
