@@ -55,6 +55,9 @@ button img {
 #clear {
   background-color: #C9E4C5; 
 }
+#highlight {
+  background-color: #cdc6dd;
+}
 
 button:active{
   box-shadow: none;
