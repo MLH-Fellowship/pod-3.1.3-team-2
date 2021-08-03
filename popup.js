@@ -22,7 +22,7 @@ if (saved) {
 
 //add written note to list
 add.addEventListener('click', function(event) { 
-  addItemToList();
+  addItemToList(document.getElementById("textarea").value);
 });
 
 //search what is written on the web
@@ -53,8 +53,7 @@ clear.addEventListener('click', function(){
 // });
 
 //functions below
-function addItemToList() {
-  var item = document.getElementById("textarea").value;
+function addItemToList(item) {
   var list = document.getElementById('list');
   var d = new Date();
   var date = "<div id='date'>"+ d.getHours() + ':' + d.getMinutes() + ' '+ d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() +"</div>";
