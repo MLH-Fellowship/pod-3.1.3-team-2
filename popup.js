@@ -5,28 +5,37 @@ var save = document.getElementById("download");
 var clear = document.getElementById('clear');
 var textarea = document.getElementById('textarea');
 var index = 0;
-var buttons = `<button class="tooltip tilebutton searchTile"><img src="https://img.icons8.com/material-outlined/15/000000/search--v2.png"/></a>
-<span class="tooltiptext">very soon!</span></button>
-<button class="tooltip tilebutton deleteTile"><img src="https://img.icons8.com/material-rounded/15/000000/delete.png"/></a>
-<span class="tooltiptext">soon!</span></button>`;
+var searchimg = new Image();
+// searchimg.src = 'https://img.icons8.com/material-outlined/15/000000/search--v2.png';
+var deleteimg = new Image();
+deleteimg.src = 'https://img.icons8.com/material-rounded/15/000000/delete.png';
+var button1 = document.createElement('button');
+button1.setAttribute('class','tooltip tilebutton searchTile');
+// button1.setAttribute('src','https://img.icons8.com/material-outlined/15/000000/search--v2.png');
+// var spans = document.createElement('span');
+// spans.setAttribute('class', 'tooltiptext');
+// spans.appendChild(document.createTextNode('soon!'));
+// button1.appendChild(spans);
 
+var button2 = document.createElement('button');
+button2.setAttribute('class','tooltip tilebutton deleteTile');
+// button2.setAttribute('src','https://img.icons8.com/material-rounded/15/000000/delete.png');
+// button2.appendChild(spans);
 
 //restoring localStorage
 var saved = localStorage.getItem('listItems');
-var note = localStorage.getItem('note');
 
 if (saved) {
-	list.innerHTML = saved;
+	list = saved;
 }
 
-
 //add written note to list
-add.addEventListener('click', function(event) { 
+add.addEventListener('click', function() { 
   addItemToList();
 });
 
 //search what is written on the web
-searchTextArea.addEventListener('click', function(event) {
+searchTextArea.addEventListener('click', function() {
     search(document.getElementById("textarea").value);
 });
 
@@ -41,31 +50,48 @@ clear.addEventListener('click', function(){
   clearList();
 });
 
-
-//tile buttons search text
-document.getElementsByClassName("searchTile").addEventListener('click', function(event){
-  searchTile(event);
-});
-
-//tile buttons delete
-document.getElementsByClassName("deleteTile").addEventListener('click', function(event){
-deleteTile(event);
-});
-
+var list = document.getElementById('list');
 //functions below
 function addItemToList() {
+
+  var button1 = document.createElement('button');
+  button1.setAttribute('class','tooltip tilebutton searchTile');
+  button1.setAttribute('img',searchimg);
+  // var spans = document.createElement('span');
+  // spans.setAttribute('class', 'tooltiptext');
+  // spans.appendChild(document.createTextNode('soon!'));
+  // button1.appendChild(spans);
+
+  var button2 = document.createElement('button');
+  button2.setAttribute('class','tooltip tilebutton deleteTile');
+  button2.setAttribute('img',deleteimg);
+  // button2.appendChild(spans);
+
+  var texts = document.createElement('p');
   var item = document.getElementById("textarea").value;
-  var list = document.getElementById('list');
+  texts.innerHTML = item;
+  var entry = document.createElement('li');
+  entry.appendChild(texts);
+  entry.setAttribute('id', 'item'+index);
   var d = new Date();
   var date = "<div id='date'>"+ d.getHours() + ':' + d.getMinutes() + ' '+ d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() +"</div>";
-  // var buttons = <div>
-  var listItem = "<li id='tile" + index + "'><p contentEditable='true'>" + item + "</p>" + date + buttons + "</li>";
-  index += 1;
-  if(item != "")
-    list.innerHTML = listItem + list.innerHTML;
+  var dates = document.createElement('p');
+  dates.innerHTML = date;
+  entry.appendChild(dates);
+  // entry.appendChild(document.createTextNode(texts));
+ 
+  button1.setAttribute('onclick', 'searchTile("' +'item'+ index +'")');
+  button2.setAttribute('onclick', 'deleteTile("' +'item'+ index +'")');
+  entry.appendChild(button1);
+  entry.appendChild(button2);
+  
+  if (item != "")
+    list.appendChild(entry);
   document.getElementById("textarea").value = "";
   localStorage.setItem('listItems', list.innerHTML);
+  index += 1;
 }
+
 
 function downloadToFile() {
   var list = document.getElementById('list');
@@ -82,13 +108,12 @@ function downloadToFile() {
     newLink.style.display = "none";
     document.body.appendChild(newLink);
   }
-newLink.click();
+  newLink.click();
 }
 
 function search(input){
   var query = 'https://www.google.com/search?q=' + encodeURIComponent(input);
   if (input!=""){
-    localStorage.setItem('note', input);
     window.open(query);
   }
 }
@@ -96,16 +121,15 @@ function search(input){
 function clearList() {
   localStorage.clear();
   list.innerHTML = "";
+  remove = document.getElementsByClassName('deleteTile'); 
+}
+function searchTile (itemid) {
+  var item = document.getElementById(itemid);
+  // search(item.getElementsByTagName('p')[0].innerHTML);
+  search(item.innerHTML);
 }
 
-
-function searchTile(event){
-  search(event.parentNode.innerText);
-}
-
-function deleteTile(event) {
-  localStorage.clear();
-  event.parentNode.outerHTML = "";
-  var list = document.getElementById('list');
-  localStorage.setItem('listItems', list.innerHTML);
+function deleteTile(itemid) {
+  var item = document.getElementById(itemid);
+  list.removeChild(item);
 }
