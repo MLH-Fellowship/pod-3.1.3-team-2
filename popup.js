@@ -30,6 +30,31 @@ searchTextArea.addEventListener('click', function(event) {
     search(document.getElementById("textarea").value);
 });
 
+//working on highlight
+//working on highlight
+waitForTab().then(function(tab){
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: inject,
+})
+});
+
+//get active tab
+async function waitForTab(){
+  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  return tab
+}
+
+//function to inject
+function inject(event){
+	// her might be the issue, function stops working here which means up to here we know that
+	// function is stored in the HTML file.
+	document.addEventListener('select', function(event){
+	let selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+  console.log(selection);
+  addItemToList(selection);
+});
+}
 
 //donwload list as an html file
 save.addEventListener('click', function(){
@@ -42,15 +67,15 @@ clear.addEventListener('click', function(){
 });
 
 
-//tile buttons search text
-document.getElementsByClassName("searchTile").addEventListener('click', function(event){
-  searchTile(event);
-});
+// //tile buttons search text
+// document.getElementsByClassName("searchTile").addEventListener('click', function(event){
+//   searchTile(event);
+// });
 
-//tile buttons delete
-document.getElementsByClassName("deleteTile").addEventListener('click', function(event){
-deleteTile(event);
-});
+// //tile buttons delete
+// document.getElementsByClassName("deleteTile").addEventListener('click', function(event){
+// deleteTile(event);
+// });
 
 //functions below
 function addItemToList() {
