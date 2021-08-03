@@ -20,6 +20,10 @@
 
 }
 
+.box {
+  border: 20px grey
+}
+
 .textarea {
   border: 2px solid #8AB6D6;
   background-color: #f1ecec;
@@ -47,13 +51,13 @@ button img {
   background-color: #A7D0CD; 
 }
 #search {
-  background-color: #F5C0C0; 
+  background-color: #C9E4C5; 
 }
 #download {
   background-color: #FFEEBB; 
 }
 #clear {
-  background-color: #C9E4C5; 
+  background-color: #F5C0C0; 
 }
 #highlight {
   background-color: #cdc6dd;
@@ -94,7 +98,7 @@ li{
   font-size: small;
   font-weight: 500;
   padding: 7px;
-  background-color: rgba(220, 212, 148, 0.219);
+  background-color: rgba(231, 215, 191, 0.219);
   color: #3d3535;
   text-align: left;
   position: absolute;
@@ -112,12 +116,12 @@ li{
 }
 .searchTile {
   margin-right: 10px;
-  background-color: #F5C0C0; 
+  background-color: #C9E4C5; 
   
 }
 .deleteTile {
   margin-right: 10px;
-  background-color: #C9E4C5;
+  background-color: #F5C0C0;
   
   
 }
