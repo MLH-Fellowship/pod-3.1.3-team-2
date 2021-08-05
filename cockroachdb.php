@@ -15,7 +15,7 @@
     $user = $_POST['user'];
 	$list = $_POST['list'];
 	
-    $insertStatement = "INSERT INTO sketch (user, list) VALUES ('{$user}','{$list}')";
+    $insertStatement = "UPDATE sketch (user, list) VALUES ('{$user}','{$list}')";
     $retrieveStatement = "SELECT list FROM sketch WHERE user == '{$user}'";
 
 	if ($conn->query($insertStatement) === TRUE) {

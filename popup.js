@@ -144,3 +144,6 @@ function clearList() {
     localStorage.clear();
     list.innerHTML = "";
 }
+
+ 
+// fetch url localhost:8000
