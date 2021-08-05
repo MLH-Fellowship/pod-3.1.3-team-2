@@ -31,6 +31,11 @@ clear.addEventListener("click", function () {
     clearList();
 });
 
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+    console.log(request);
+        addItemToList(request.greeting);
+});
+
 function addItemToList(item) {
     // Button 1
     var button1 = document.createElement("button");
