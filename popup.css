@@ -59,8 +59,11 @@ button img {
 #clear {
   background-color: #F5C0C0; 
 }
-#highlight {
+#highlightOn {
   background-color: #cdc6dd;
+}
+#highlightOff {
+  background-color: white;
 }
 
 button:active{
