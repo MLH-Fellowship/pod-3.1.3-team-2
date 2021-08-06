@@ -3,14 +3,18 @@ var add = document.getElementById("add");
 var save = document.getElementById("download");
 var clear = document.getElementById("clear");
 var textarea = document.getElementById("textarea");
-var index = 0;
 var saved = localStorage.getItem('listItems');
 var list = document.getElementById('list');
+var index = 0;
 
 if (saved) {
 	list.innerHTML = saved;
   assignButton();
 }
+
+// tells background.js that it opened
+chrome.runtime.sendMessage({text: "popup opened"});
+
 //add written note to list
 add.addEventListener("click", function () {
     addItemToList(document.getElementById('textarea').value);
@@ -31,7 +35,15 @@ clear.addEventListener("click", function () {
     clearList();
 });
 
-var list = document.getElementById("list");
+// retrieves items stored in background.js
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+    if (request.retrieve == "retrieve") {
+        console.log("received retrievable items")
+        request.itemsToAdd.forEach(function(item){
+            addItemToList(item);
+        })
+    }
+});
 
 function addItemToList(item) {
     // Button 1
@@ -92,8 +104,7 @@ function addItemToList(item) {
     localStorage.setItem("listItems", list.innerHTML);
     index += 1;
 
-    assignButton();
-       
+    assignButton();   
 }
 
 function assignButton() {
