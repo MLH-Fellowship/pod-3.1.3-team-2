@@ -7,13 +7,12 @@ var saved = localStorage.getItem('listItems');
 var list = document.getElementById('list');
 var index = 0;
 
-
-
 if (saved) {
 	list.innerHTML = saved;
   assignButton();
 }
 
+// tells background.js that it opened
 chrome.runtime.sendMessage({text: "popup opened"});
 
 //add written note to list
@@ -36,6 +35,7 @@ clear.addEventListener("click", function () {
     clearList();
 });
 
+// retrieves items stored in background.js
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
     if (request.retrieve == "retrieve") {
         console.log("received retrievable items")
