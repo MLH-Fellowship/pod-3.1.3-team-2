@@ -6,10 +6,15 @@ var textarea = document.getElementById("textarea");
 var saved = localStorage.getItem('listItems');
 var list = document.getElementById('list');
 var index = 0;
+var highlightButton = document.getElementsByClassName('highlightButton')[0];
+var highlightToggle = false; //off
+
+highlightToggle = localStorage.getItem("state");
 
 if (saved) {
-	list.innerHTML = saved;
-  assignButton();
+    list.innerHTML = saved;
+    assignButton();
+
 }
 
 // tells background.js that it opened
@@ -34,16 +39,30 @@ save.addEventListener("click", function () {
 clear.addEventListener("click", function () {
     clearList();
 });
+highlightButton.addEventListener("click", function() {
+    if (highlightToggle) {
+        highlightToggle = false;
+        highlightButton.id = 'highlightOff';
+    }
+    else {
+        highlightToggle = true;
+        highlightButton.id = 'highlightOn';
+    }
+    localStorage.setItem("state", highlightToggle);
+});
 
 // retrieves items stored in background.js
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
-    if (request.retrieve == "retrieve") {
-        console.log("received retrievable items")
-        request.itemsToAdd.forEach(function(item){
-            addItemToList(item);
-        })
-    }
-});
+if (highlightToggle) {
+    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+        if (request.retrieve == "retrieve") {
+            console.log("received retrievable items")
+            request.itemsToAdd.forEach(function(item){
+                addItemToList(item)
+            })
+        }
+    });
+    
+}
 
 function addItemToList(item) {
     // Button 1
