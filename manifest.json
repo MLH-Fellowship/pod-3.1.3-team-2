@@ -11,6 +11,10 @@
       "js": ["content.js"]
       }
     ],
+    "web_accessible_resources": [{
+      "resources": ["script.js"],
+      "matches": ["<all_urls>"]
+    }],
   "background": {
     "service_worker": "background.js"
   },
