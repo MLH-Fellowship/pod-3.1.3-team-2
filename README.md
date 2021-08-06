@@ -23,7 +23,7 @@ The chrome extension is built using JavaScript with HTML and CSS.
 - **Delete List:** delets all saved lists
 - **Edit List:** edit a saved list item just by clicking on it
 - **Highlighter:** highlght text to directly add it to your list, no more typing!
-- **Indiviual Features:** delete and search for individual notes!
+- **Individual Features:** delete and search for individual notes!
 
 
 ## Chrome UI
