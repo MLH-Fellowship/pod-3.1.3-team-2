@@ -25,6 +25,13 @@ The chrome extension is built using JavaScript with HTML and CSS.
 - **Highlighter:** highlght text to directly add it to your list, no more typing!
 - **Individual Features:** delete and search for individual notes!
 
+##Coming Soon!
+- Database Integration
+- Documentaton Website
+- **Highlighter Bug Fixes:** Highlight acts funny sometimes!
+- **Markup:** colors for highligher text
+
+
 
 ## Chrome UI
 <img src ="images/sample_new.png" width="300"/>
