@@ -1,7 +1,7 @@
 <?php
 	$servername = "free-tier.gcp-us-central1.cockroachlabs.cloud";
 	$username = "lucas";
-	$password = "rKA9opQmWRbA9RPa";
+	$password = "lucasvinzon1";
 	$dbname = "valid-monkey-2858.defaultdb";
     $port = "26257";
 	
@@ -12,11 +12,18 @@
 		die("Connection failed: " . $conn->connect_error);
 	}
 
-    $user = $_POST['user'];
-	$list = $_POST['list'];
+    $post_user = $_POST['user'];
+	$post_list = $_POST['list'];
+
+	$get_user = $_GET['user'];
 	
-    $insertStatement = "UPDATE sketch (user, list) VALUES ('{$user}','{$list}')";
+    $insertStatement = "UPSERT sketch (user, list) VALUES ('{$user}','{$list}')";
     $retrieveStatement = "SELECT list FROM sketch WHERE user == '{$user}'";
+	if ($conn->query(retrieveStatement) === TRUE) {
+		echo "list retrieved";
+	} else {
+		echo "list unable to be retrieved";
+	}
 
 	if ($conn->query($insertStatement) === TRUE) {
 		echo "list saved";

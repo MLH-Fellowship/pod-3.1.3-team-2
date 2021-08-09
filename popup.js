@@ -11,6 +11,7 @@ if (saved) {
 	list.innerHTML = saved;
   assignButton();
 }
+
 //add written note to list
 add.addEventListener("click", function () {
     addItemToList(document.getElementById('textarea').value);
@@ -145,5 +146,25 @@ function clearList() {
     list.innerHTML = "";
 }
 
- 
-// fetch url localhost:8000
+//database build
+var server = 'localhost:8000'
+var myHeaders = new Headers();
+var user = '';
+
+var payload = {user: user, list: list}
+
+var get = { method: 'GET',headers: myHeaders, mode: 'cors', cache: 'default', body: {user: user}};
+var post = { method: 'POST',headers: myHeaders, mode: 'cors', cache: 'default', body: {user: user, list: list}};
+
+function saveDB(post){
+    fetch(server, post).then(function(response){
+        console.log(response)
+    })
+}
+
+function retrieveDB(get){
+    fetch(server, get).then(function(response){
+        console.log(response)
+        document.getElementById('list').innerHTML = response;
+    })
+}
