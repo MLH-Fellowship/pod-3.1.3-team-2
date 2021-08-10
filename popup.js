@@ -6,7 +6,7 @@ var textarea = document.getElementById("textarea");
 var saved = localStorage.getItem('listItems');
 var list = document.getElementById('list');
 var index = 0;
-var highlightButton = document.getElementsByClassName('highlightButton')[0];
+var highlightButton = document.getElementById('highlightButton');
 var highlightToggle = false; //off
 
 highlightToggle = localStorage.getItem("state");
