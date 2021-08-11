@@ -58,6 +58,12 @@ button img {
 #highlight {
   background-color: #cdc6dd;
 }
+#save{
+  background-color: #ffc1b0;
+}
+#retrieve{
+  background-color: #b4e7d9;
+}
 
 button:active{
   box-shadow: none;
