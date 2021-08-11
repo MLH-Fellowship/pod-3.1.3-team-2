@@ -15,5 +15,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
         console.log("adding items to list");
         itemsToAdd.push(request.selection);
         console.log(itemsToAdd);
+     
     }
 });
+
+localStorage.setItem("highlightedText", itemsToAdd);

@@ -8,8 +8,9 @@ var list = document.getElementById('list');
 var index = 0;
 var highlightButton = document.getElementById('highlightButton');
 var highlightToggle = false; //off
-
+var highlightedText = localStorage.getItem("highlightedtext");
 highlightToggle = localStorage.getItem("state");
+
 
 if (saved) {
     list.innerHTML = saved;
