@@ -32,7 +32,16 @@ clear.addEventListener("click", function () {
     clearList();
 });
 
-var list = document.getElementById("list");
+//donwload list as an html file
+dbsave.addEventListener("click", function () {
+    saveDB();
+});
+
+//clear list
+dbretrieve.addEventListener("click", function () {
+    retrieveDB();
+});
+
 
 function addItemToList(item) {
     // Button 1
@@ -147,23 +156,18 @@ function clearList() {
 }
 
 //database build
-var server = 'localhost:8000'
-var myHeaders = new Headers();
-var user = '';
+var server = '172.104.215.22:3000/';
+var username = 'lucas';
+var list = 'hello';
 
-var payload = {user: user, list: list}
-
-var get = { method: 'GET',headers: myHeaders, mode: 'cors', cache: 'default', body: {user: user}};
-var post = { method: 'POST',headers: myHeaders, mode: 'cors', cache: 'default', body: {user: user, list: list}};
-
-function saveDB(post){
-    fetch(server, post).then(function(response){
+function saveDB(){
+    fetch(server, { method: 'PUT', body: {username: username, list: list}}).then(function(response){
         console.log(response)
     })
 }
 
-function retrieveDB(get){
-    fetch(server, get).then(function(response){
+async function retrieveDB(){
+    fetch(server, { method: 'GET'}).then(function(response){
         console.log(response)
         document.getElementById('list').innerHTML = response;
     })
