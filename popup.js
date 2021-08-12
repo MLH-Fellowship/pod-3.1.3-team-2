@@ -1,16 +1,21 @@
 var searchTextArea = document.getElementById("search");
 var add = document.getElementById("add");
-var save = document.getElementById("download");
+var download = document.getElementById("download");
 var clear = document.getElementById("clear");
 var textarea = document.getElementById("textarea");
-var index = 0;
 var saved = localStorage.getItem('listItems');
 var list = document.getElementById('list');
+var dbsave = document.getElementById('save');
+var dbretrieve = document.getElementById('retrieve');
+var index = 0;
 
 if (saved) {
 	list.innerHTML = saved;
   assignButton();
 }
+
+// tells background.js that it opened
+chrome.runtime.sendMessage({text: "popup opened"});
 
 //add written note to list
 add.addEventListener("click", function () {
@@ -23,7 +28,7 @@ searchTextArea.addEventListener("click", function () {
 });
 
 //donwload list as an html file
-save.addEventListener("click", function () {
+download.addEventListener("click", function () {
     downloadToFile();
 });
 
@@ -42,6 +47,15 @@ dbretrieve.addEventListener("click", function () {
     retrieveDB();
 });
 
+// retrieves items stored in background.js
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+    if (request.retrieve == "retrieve") {
+        console.log("received retrievable items")
+        request.itemsToAdd.forEach(function(item){
+            addItemToList(item);
+        })
+    }
+});
 
 function addItemToList(item) {
     // Button 1
@@ -102,8 +116,7 @@ function addItemToList(item) {
     localStorage.setItem("listItems", list.innerHTML);
     index += 1;
 
-    assignButton();
-       
+    assignButton();   
 }
 
 function assignButton() {

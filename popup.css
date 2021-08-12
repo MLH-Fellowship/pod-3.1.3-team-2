@@ -20,10 +20,6 @@
 
 }
 
-.box {
-  border: 20px grey
-}
-
 .textarea {
   border: 2px solid #8AB6D6;
   background-color: #f1ecec;
@@ -61,6 +57,12 @@ button img {
 }
 #highlight {
   background-color: #cdc6dd;
+}
+#save{
+  background-color: #ffc1b0;
+}
+#retrieve{
+  background-color: #b4e7d9;
 }
 
 button:active{
