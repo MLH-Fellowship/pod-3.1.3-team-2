@@ -8,6 +8,7 @@ var list = document.getElementById('list');
 var dbsave = document.getElementById('save');
 var dbretrieve = document.getElementById('retrieve');
 var server = 'http://172.104.215.22:3000/';
+var username = 'lucas';
 var index = 0;
 
 if (saved) {
@@ -173,7 +174,7 @@ function clearList() {
 
 function saveDB(){
     fetch(server, { method: 'PUT', body: {username: username, list: list}}).then(function(response){
-        console.log(response.list)
+        console.log(response)
     })
 }
 
