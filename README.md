@@ -24,12 +24,11 @@ NoteIt is built using JavaScript with HTML and CSS.
 - **Edit List:pencil2::** edit a saved list item just by clicking on it
 - **Highlighter:** highlght text to directly add it to your list, no more typing!
 - **Individual Features:** delete and search for individual notes!
+- **Database:** notes can be saved and retreived from a databese instead of saving notes as a file to your computer
 
-## Coming Soon! :clock4:
-- Database Integration
-- Documentaton Website :computer:
-- **Highlighter Bug Fixes:bug::** Highlight acts funny sometimes!
-- **Markup:** colors for highligher text
+
+## NoteIt Infomational Website
+NoteIt has an accompanying website where you you can find all you need to know. The NoteIt website shows you about how to use the extension, where to download it, the features offered, as well as infomation and links to the creators social accounts.
 
 
 
