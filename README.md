@@ -1,4 +1,6 @@
+
 # Chrome Extension NoteIt! :memo:
+<img src ="images/banner.png" width="300"/>
 
 ## :star: Project Description :star:
 Hello developers! Let's help you organize, presenting to you, :sparkles:NoteIt!:sparkles: A chrome extension used to take and save notes, open new tabs to search from list directly, as well as saving highlighted texts and so much more!
@@ -28,13 +30,12 @@ NoteIt is built using JavaScript with HTML and CSS.
 
 
 ## NoteIt Infomational Website
-NoteIt has an accompanying website where you you can find all you need to know. The NoteIt website shows you about how to use the extension, where to download it, the features offered, as well as infomation about the creators and links to their social accounts.
+NoteIt has an accompanying website where you you can find all you need to know. The NoteIt website shows you about how to use the extension, where to download it, the features offered, as well as infomation and links to the creators social accounts.
+You can check out the website at (insert link)
 
-### (website link)
-
-#### Website Preview!
-<img src ="images/website1.png" width="650">
-<img src ="images/website2.png" width="650">
+### Website Preview
+<img src= "images/website1.png" width="300">
+<img scr ="images/website2.png>" width="300">
 
 ## :star: Chrome UI :star:
 <img src ="images/sample_new.png" width="300"/>
