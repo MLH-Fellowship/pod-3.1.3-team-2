@@ -29,12 +29,14 @@ See sample shot at the bottom of README to view how the working project appears 
 - **Retreiving:** click the retreive button the retreive your last saved notes from the database. Note! When you retreive old notes from the database anything that is currently in your notes list in the extension will be replaced by the retreived notes, so make sure you download any notes you want to keep to your computer!
 
 ## :star: Chrome UI :star:
-<img src ="images/sample_new.png" width="300"/>
+<img src ="images/updatedui.png" width="300"/>
 
 ## NoteIt Infomational Website 🖥️
 NoteIt has an accompanying website where you can find all you need to know. The NoteIt website shows you about how to use the extension, where to download it, the features offered, as well as infomation and links to the creators social accounts.
 You can check out the website at
 #### https://mlh-noteit.netlify.app/
+See the code at 
+#### https://github.com/MsMore/Note-It-website
 
 <img src= "images/website1.png" width="650">
 <img src ="images/website2.png" width="650">
