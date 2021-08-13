@@ -1,0 +1,15 @@
+doctype=html
+
+html
+   head
+      title Lists
+   body
+    h1 Lists
+    table(style='width:100%', border='1')
+      tr
+         th Username
+         th 
+      each val in it
+         tr
+            td #{val.username} 
+            td #{val.list}
