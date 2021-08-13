@@ -25,6 +25,8 @@ See sample shot at the bottom of README to view how the working project appears 
 - **Highlighter:** highlght text to directly add it to your list, no more typing!
 - **Individual Features:** delete and search for individual notes!
 - **Database:** notes can be saved and retreived from a databese instead of saving notes as a file to your computer
+-  **Saving Notes:** click save notes to store your list of notes to the database until you need them again. Make sure to only store one list of notes at a time
+- **Retreiving:** click the retreive button the retreive your last saved notes from the database. Note! When you retreive old notes from the database anything that is currently in your notes list in the extension will be replaced by the retreived notes, so make sure you download any notes you want to keep to your computer!
 
 ## :star: Chrome UI :star:
 <img src ="images/sample_new.png" width="300"/>
@@ -41,7 +43,10 @@ You can check out the website at
 NoteIt is built using JavaScript with HTML and CSS.
 
 ## Authors :family:
+#### Riddhi More
 - https://github.com/MsMore
+#### Lucas Vinzon
 - https://github.com/SnowPrimate
+#### Katelyn Hurst
 - https://github.com/hurstkatelyn
 
