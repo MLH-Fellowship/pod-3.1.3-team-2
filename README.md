@@ -1,38 +1,43 @@
-# Team Two's Developer Tools Project
+# Chrome Extension NoteIt! :memo:
 
-## Project Description
-Hello developers! Let's help you organise, presenting to you this (we will name it later), chrome extension used to take and save notes, open new tabs to search from list directly, as well as saving highlighted texts and so much more!
-See sample shot at the bottom of README to view how the working project appears in the chrome browser.
+## :star: Project Description :star:
+Hello developers! Let's help you organize, presenting to you, :sparkles:NoteIt!:sparkles: A chrome extension used to take and save notes, open new tabs to search from list directly, as well as saving highlighted texts and so much more!
+See sample shot at the bottom of README to view how the working project appears in your chrome browser.
 
-## Techonologies used
-The chrome extension is built using JavaScript with HTML and CSS.
+## Techonologies Used
+NoteIt is built using JavaScript with HTML and CSS.
 
-## How to Test the Extension
-- Save the files to your local machine
+## :information_source: How to Test the Extension
+- Save the files to your local machine:arrow_down:
 - To add extension as developer you first go to `chrome://extensions`
 - Enable the develper mode from the upper right corner
-- Click `load unpacked` in the upper left corner
-- Select the folder that contains the `manifest.json` file
+- Click `load unpacked` in the upper left corner:arrow_upper_left:
+- Select the folder:open_file_folder: that contains the `manifest.json` file
 - Extension is installed!
 
 
 ## Features Implemented
 - **Add:** write note and add to list
-- **Web Search:** search the text directly from your text box
-- **Download list:** get you list into your local device
-- **Delete list:** delets all saved lists
-- **Edit list:** edit a saved list item just by clicking on it
+- **Web Search:mag_right::** search the text directly from your text box
+- **Download List:** get you list into your local device
+- **Delete List:x::** delets all saved lists
+- **Edit List:pencil2::** edit a saved list item just by clicking on it
+- **Highlighter:** highlght text to directly add it to your list, no more typing!
+- **Individual Features:** delete and search for individual notes!
 
-## Coming Soon!
-- **Highlighter:** highlight text to directly add it to your list, no more typing!
-- **Individual features:** delete and search for individual search item
-- and so much more!
-
-## Chrome UI
-<img src ="images/sample.PNG" width="300"/>
+## Coming Soon! :clock4:
+- Database Integration
+- Documentaton Website :computer:
+- **Highlighter Bug Fixes:bug::** Highlight acts funny sometimes!
+- **Markup:** colors for highligher text
 
 
-## Authors
+
+## :star: Chrome UI :star:
+<img src ="images/sample_new.png" width="300"/>
+
+
+## Authors :family:
 - Riddhi More
 - Lucas Vinzon
 - Katelyn Hurst
