@@ -213,6 +213,7 @@ async function retrieveDB(){
     })
     console.log(retrieved.db_response[0].list)
     document.getElementById('list').innerHTML = retrieved.db_response[0].list;
+    localStorage.setItem("listItems", list.innerHTML);
 }
 
 
