@@ -10,6 +10,10 @@ var dbretrieve = document.getElementById('retrieve');
 var server = 'http://172.104.215.22:3000/';
 var username = 'lucas';
 var index = 0;
+var highlightButton = document.getElementById("highlightButton");
+var highlightToggle = false;
+highlightButton.id = localStorage.getItem("color");
+highlightToggle = localStorage.getItem("state");
 
 if (saved) {
 	list.innerHTML = saved;
@@ -18,6 +22,24 @@ if (saved) {
 
 // tells background.js that it opened
 chrome.runtime.sendMessage({text: "popup opened"});
+highlightButton.addEventListener("click", function() {
+    if (highlightToggle) {
+        highlightToggle = false;
+        highlightButton.id = 'highlightOff';
+        localStorage.setItem("state", highlightToggle);
+        localStorage.setItem("color", highlightButton.id);
+        console.log("Off");
+    }
+    else {
+        highlightToggle = true;
+        highlightButton.id = 'highlightOn';
+        localStorage.setItem("state", highlightToggle);
+        localStorage.setItem("color", highlightButton.id);
+        console.log("On");
+    }
+    
+});
+
 
 //add written note to list
 add.addEventListener("click", function () {
@@ -49,15 +71,18 @@ dbretrieve.addEventListener("click", function () {
     retrieveDB();
 });
 
+if (highlightToggle) {
 // retrieves items stored in background.js
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
-    if (request.retrieve == "retrieve") {
-        console.log("received retrievable items")
-        request.itemsToAdd.forEach(function(item){
-            addItemToList(item);
-        })
-    }
-});
+        if (request.retrieve == "retrieve") {
+            console.log("received retrievable items")
+            request.itemsToAdd.forEach(function(item){
+                
+                addItemToList(item);
+            })
+        }
+    });
+}
 
 function addItemToList(item) {
     // Button 1
@@ -189,3 +214,5 @@ async function retrieveDB(){
     console.log(retrieved.db_response[0].list)
     document.getElementById('list').innerHTML = retrieved.db_response[0].list;
 }
+
+
