@@ -34,7 +34,7 @@ See sample shot at the bottom of README to view how the working project appears 
 ## NoteIt Infomational Website 🖥️
 NoteIt has an accompanying website where you can find all you need to know. The NoteIt website shows you about how to use the extension, where to download it, the features offered, as well as infomation and links to the creators social accounts.
 You can check out the website at
-#### https://mlh-noteit.netlify.app/
+#### https://noteit.tech/
 See the code at 
 #### https://github.com/MsMore/Note-It-website
 
