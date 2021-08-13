@@ -11,8 +11,9 @@ var server = 'http://172.104.215.22:3000/';
 var username = 'lucas';
 var index = 0;
 var highlightButton = document.getElementById("highlightButton");
+var highlightToggle = false;
 highlightButton.id = localStorage.getItem("color");
-
+highlightToggle = localStorage.getItem("state");
 
 if (saved) {
 	list.innerHTML = saved;
@@ -76,6 +77,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
         if (request.retrieve == "retrieve") {
             console.log("received retrievable items")
             request.itemsToAdd.forEach(function(item){
+                
                 addItemToList(item);
             })
         }
