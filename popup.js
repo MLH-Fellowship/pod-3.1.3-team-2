@@ -7,6 +7,7 @@ var saved = localStorage.getItem('listItems');
 var list = document.getElementById('list');
 var dbsave = document.getElementById('save');
 var dbretrieve = document.getElementById('retrieve');
+var server = 'http://172.104.215.22:3000/';
 var index = 0;
 
 if (saved) {
@@ -169,19 +170,17 @@ function clearList() {
 }
 
 //database build
-var server = '172.104.215.22:3000/';
-var username = 'lucas';
-var list = 'hello';
 
 function saveDB(){
     fetch(server, { method: 'PUT', body: {username: username, list: list}}).then(function(response){
-        console.log(response)
+        console.log(response.list)
     })
 }
 
 async function retrieveDB(){
-    fetch(server, { method: 'GET'}).then(function(response){
-        console.log(response)
-        document.getElementById('list').innerHTML = response;
+    let retrieved = await fetch(server, { method: 'GET'}).then(function(response){
+        return response.json()
     })
+    console.log(retrieved.db_response[0].list)
+    document.getElementById('list').innerHTML = retrieved.db_response[0].list;
 }
