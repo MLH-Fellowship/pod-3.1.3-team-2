@@ -21,12 +21,12 @@ See sample shot at the bottom of README to view how the working project appears 
 - **Web Search:mag_right::** There are two different ways to use the Search Web feature. First, you may type into the “Write your note here…” text box and click the Search Web button in the options menu. This will open a new tab in your browser Google searching your test. You can also search a previous note that is NoteIt has saved in the pop out for you by clicking the Search Web button on that note! Awesome right?
 - **Download List:** Download your list of notes in the extension to your computer as file for offline excess
 - **Delete List:x::** When you no longer need your saved notes, you can clear your list of notes by clicking the Delete All button in the options menu. If you would like to just delete a single note from the list, you can select the Delete Note button one that singular note.
-- **Edit List:pencil2::** edit a saved list item just by clicking on it
+- **Edit List:pencil2::** Edit a saved list item just by clicking on it
 - **Highlighter:** To save time from typing if you would like a shortcut, you can turn on the highlight feature and then select the text you want from the webpage, and this will add your selected text to your list of notes in the extension!
-- **Individual Features:** delete and search for individual notes!
-- **Database:** notes can be saved and retreived from a database instead of saving notes as a file to your computer
--  **Saving Notes:** click save notes to store your list of notes to the database until you need them again. Note – you can only store one list of notes to the database at a time when you retrieve your saved notes the database will be cleared to make room for a new list you would like to save in the future!
-- **Retreiving:** click the retreive button the retreive your last saved notes from the database. Note! When you retreive old notes from the database anything that is currently in your notes list in the extension will be replaced by the retreived notes, so make sure you download any notes you want to keep to your computer!
+- **Individual Features:** Delete and search for individual notes!
+- **Database:** Notes can be saved and retreived from a database instead of saving notes as a file to your computer
+-  **Saving Notes:** Click save notes to store your list of notes to the database until you need them again. Note – you can only store one list of notes to the database at a time when you retrieve your saved notes the database will be cleared to make room for a new list you would like to save in the future!
+- **Retreiving:** Click the retreive button the retreive your last saved notes from the database. Note! When you retreive old notes from the database anything that is currently in your notes list in the extension will be replaced by the retreived notes, so make sure you download any notes you want to keep to your computer!
 
 ## :star: Chrome UI :star:
 <img src ="images/updatedui.png" width="300"/>
