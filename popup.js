@@ -10,14 +10,10 @@ var dbretrieve = document.getElementById('retrieve');
 var server = 'http://172.104.215.22:3000/';
 var username = 'lucas';
 var index = 0;
-var highlightButton = document.getElementById('highlightButton');
-var highlightToggle;
-
-highlightButton.id = localStorage.getItem("color");
 
 if (saved) {
-    list.innerHTML = saved;
-    assignButton();
+	list.innerHTML = saved;
+  assignButton();
 }
 
 // tells background.js that it opened
@@ -60,40 +56,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
         request.itemsToAdd.forEach(function(item){
             addItemToList(item);
         })
-
-highlightButton.addEventListener("click", function() {
-    if (highlightToggle) {
-        highlightToggle = false;
-        highlightButton.id = 'highlightOff';
-        localStorage.setItem("state", highlightToggle);
-        localStorage.setItem("color", highlightButton.id);
-        console.log("Off");
-
     }
-    else {
-        highlightToggle = true;
-        highlightButton.id = 'highlightOn';
-        localStorage.setItem("state", highlightToggle);
-        localStorage.setItem("color", highlightButton.id);
-        console.log("On");
-    }
-    
 });
-highlightToggle = localStorage.getItem("state");
-console.log("state of highlighter", highlightToggle);
-// retrieves items stored in background.js
-if (highlightToggle) {
-    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
-        if (request.retrieve == "retrieve") {
-            console.log("received retrievable items")
-            request.itemsToAdd.forEach(function(item){
-                addItemToList(item);
-                console.log("adding to list");
-            })
-        }
-    });
-}
-
 
 function addItemToList(item) {
     // Button 1
@@ -206,10 +170,10 @@ function clearList() {
     list.innerHTML = "";
 }
 
-
 //database build
 
 function saveDB(){
+    list = document.getElementById('list');
     fetch(server, { method: 'PUT', body: {username: username, list: list}}).then(function(response){
         console.log(response)
     })
@@ -222,4 +186,3 @@ async function retrieveDB(){
     console.log(retrieved.db_response[0].list)
     document.getElementById('list').innerHTML = retrieved.db_response[0].list;
 }
-
