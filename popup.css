@@ -55,14 +55,19 @@ button img {
 #clear {
   background-color: #F5C0C0; 
 }
-#highlight {
+#highlightOn {
   background-color: #cdc6dd;
 }
+ highlighter-Toggle
+#highlightOff {
+  background-color: white;
+
 #save{
   background-color: #ffc1b0;
 }
 #retrieve{
   background-color: #b4e7d9;
+
 }
 
 button:active{
