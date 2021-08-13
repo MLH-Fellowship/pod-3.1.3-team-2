@@ -171,10 +171,13 @@ function clearList() {
 }
 
 //database build
-
 function saveDB(){
-    list = document.getElementById('list');
-    fetch(server, { method: 'PUT', body: {username: username, list: list}}).then(function(response){
+    list = document.getElementById('list').innerHTML;
+    fetch(server, { method: 'PUT',
+		headers: new Headers({'content-type': 'application/json'}),
+        mode:'cors',
+        body: JSON.stringify({username: username, list: list}),
+	}).then(function(response){
         console.log(response)
     })
 }
