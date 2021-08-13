@@ -20,11 +20,11 @@ const fs = require('fs');
 // Connect to CockroachDB through Sequelize
 var sequelize = new Sequelize({
   dialect: "postgres",
-  username: "lucas",
-  password: "lucasvinzon1",
-  host: "free-tier.gcp-us-central1.cockroachlabs.cloud",
-  port: 26257,
-  database: "valid-monkey-2858.note",
+  username: "",
+  password: "",
+  host: "",
+  port: 0,
+  database: "",
   dialectOptions: {
     ssl: {
       
