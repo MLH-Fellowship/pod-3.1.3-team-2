@@ -173,6 +173,7 @@ function clearList() {
 //database build
 
 function saveDB(){
+    list = document.getElementById('list');
     fetch(server, { method: 'PUT', body: {username: username, list: list}}).then(function(response){
         console.log(response)
     })
