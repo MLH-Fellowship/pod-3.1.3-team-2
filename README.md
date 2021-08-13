@@ -28,12 +28,13 @@ NoteIt is built using JavaScript with HTML and CSS.
 
 
 ## NoteIt Infomational Website
-NoteIt has an accompanying website where you you can find all you need to know. The NoteIt website shows you about how to use the extension, where to download it, the features offered, as well as infomation and links to the creators social accounts.
-You can check out the website at (insert link)
+NoteIt has an accompanying website where you you can find all you need to know. The NoteIt website shows you about how to use the extension, where to download it, the features offered, as well as infomation about the creators and links to their social accounts.
 
-### Website Preview
-<img src= "images/website1.png" width="300">
-<img scr ="images/website2.png>" width="300">
+### (website link)
+
+#### Website Preview!
+<img src ="images/website1.png" width="650">
+<img src ="images/website2.png" width="650">
 
 ## :star: Chrome UI :star:
 <img src ="images/sample_new.png" width="300"/>
