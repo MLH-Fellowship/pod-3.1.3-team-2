@@ -1,10 +1,14 @@
 var searchTextArea = document.getElementById("search");
 var add = document.getElementById("add");
-var save = document.getElementById("download");
+var download = document.getElementById("download");
 var clear = document.getElementById("clear");
 var textarea = document.getElementById("textarea");
 var saved = localStorage.getItem('listItems');
 var list = document.getElementById('list');
+var dbsave = document.getElementById('save');
+var dbretrieve = document.getElementById('retrieve');
+var server = 'http://172.104.215.22:3000/';
+var username = 'lucas';
 var index = 0;
 var highlightButton = document.getElementById('highlightButton');
 var highlightToggle;
@@ -30,7 +34,7 @@ searchTextArea.addEventListener("click", function () {
 });
 
 //donwload list as an html file
-save.addEventListener("click", function () {
+download.addEventListener("click", function () {
     downloadToFile();
 });
 
@@ -38,6 +42,25 @@ save.addEventListener("click", function () {
 clear.addEventListener("click", function () {
     clearList();
 });
+
+//donwload list as an html file
+dbsave.addEventListener("click", function () {
+    saveDB();
+});
+
+//clear list
+dbretrieve.addEventListener("click", function () {
+    retrieveDB();
+});
+
+// retrieves items stored in background.js
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+    if (request.retrieve == "retrieve") {
+        console.log("received retrievable items")
+        request.itemsToAdd.forEach(function(item){
+            addItemToList(item);
+        })
+
 highlightButton.addEventListener("click", function() {
     if (highlightToggle) {
         highlightToggle = false;
@@ -45,6 +68,7 @@ highlightButton.addEventListener("click", function() {
         localStorage.setItem("state", highlightToggle);
         localStorage.setItem("color", highlightButton.id);
         console.log("Off");
+
     }
     else {
         highlightToggle = true;
@@ -181,3 +205,21 @@ function clearList() {
     localStorage.clear();
     list.innerHTML = "";
 }
+
+
+//database build
+
+function saveDB(){
+    fetch(server, { method: 'PUT', body: {username: username, list: list}}).then(function(response){
+        console.log(response)
+    })
+}
+
+async function retrieveDB(){
+    let retrieved = await fetch(server, { method: 'GET'}).then(function(response){
+        return response.json()
+    })
+    console.log(retrieved.db_response[0].list)
+    document.getElementById('list').innerHTML = retrieved.db_response[0].list;
+}
+
