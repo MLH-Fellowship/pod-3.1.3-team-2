@@ -41,7 +41,7 @@ You can check out the website at
 <img src ="images/website2.png" width="650">
 
 ## Authors :family:
-- Riddhi More
-- Lucas Vinzon
-- Katelyn Hurst
+- https://github.com/MsMore
+- https://github.com/SnowPrimate
+- https://github.com/hurstkatelyn
 
